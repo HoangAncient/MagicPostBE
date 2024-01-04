@@ -62,7 +62,7 @@ const userRoleAuth = (requiredRole, above = 0) => {
     const userRole = req.cookies.role;
 
     if (!roles['ceo'].includes(userRole)){
-      return res.status(403).send('role unidentified');
+      return res.status(403).send('role unidentified' + userRole);
     }
 
     if (userRole == null) {
