@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
-const { DB_USER, DB_PASS, LINK } = require("../");
+const { LINK } = require("../");
 
-mongoose.set('strictQuery', true);
-mongoose.connect(
-  `mongodb+srv://${DB_USER}:${DB_PASS}${LINK}`
-);
+mongoose.set("strictQuery", true);
+mongoose.connect(process.env.LINK);
 
 module.exports = mongoose;
